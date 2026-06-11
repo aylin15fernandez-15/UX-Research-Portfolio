@@ -1,0 +1,189 @@
+/* PROJECT PAGE STYLES */
+.project-hero {
+  padding: 80px 48px 64px;
+  border-bottom: 0.5px solid var(--border);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--ink); }
+.project-tag {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.project-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.project-summary {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.85;
+  font-weight: 300;
+  max-width: 640px;
+}
+.project-meta-bar {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-bottom: 0.5px solid var(--border);
+  background: var(--bg-alt);
+}
+.meta-item { padding: 0 24px; border-right: 0.5px solid var(--border); }
+.meta-item:first-child { padding-left: 0; }
+.meta-item:last-child { border: none; }
+.meta-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--light);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.meta-val { font-size: 14px; color: var(--ink); font-weight: 400; line-height: 1.5; }
+
+.project-body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+.project-section { margin-bottom: 56px; }
+.project-section:last-child { margin-bottom: 0; }
+.project-section-label {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.project-section h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 18px;
+  line-height: 1.25;
+}
+.project-section p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.project-section p:last-child { margin-bottom: 0; }
+.project-section strong { color: var(--ink); font-weight: 500; }
+
+.highlight-box {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin: 24px 0;
+  border-left: 3px solid #B8B0C8;
+}
+.highlight-box p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.85;
+  margin: 0;
+  font-weight: 300;
+}
+.highlight-box strong { color: var(--ink); font-weight: 500; }
+
+.finding-list {
+  list-style: none;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.finding-list li {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.75;
+  font-weight: 300;
+  padding-left: 20px;
+  position: relative;
+}
+.finding-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--light);
+}
+
+.outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.outcome-card {
+  background: var(--bg-alt);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 18px;
+}
+.outcome-num {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--ink);
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.outcome-label { font-size: 12px; color: var(--muted); line-height: 1.5; font-weight: 300; }
+
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--border);
+  margin: 48px 0;
+}
+
+.project-nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 48px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.5px solid var(--border);
+}
+.proj-nav-link {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.proj-nav-link:hover { color: var(--ink); }
+
+@media (max-width: 768px) {
+  .project-hero, .project-body, .project-meta-bar, .project-nav { padding-left: 24px; padding-right: 24px; }
+  .project-meta-bar { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .meta-item { border: none; padding: 0; }
+  .outcome-grid { grid-template-columns: 1fr; }
+}

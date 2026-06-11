@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aylin Fernandez — UX Researcher</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+/* HERO */
+.hero {
+  background: var(--hero-bg);
+  padding: 80px 48px 72px;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 48px;
+  align-items: center;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5A5470;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.08;
+  color: var(--ink);
+  margin-bottom: 22px;
+}
+.hero-sub {
+  font-size: 15px;
+  color: #3A3A3A;
+  line-height: 1.8;
+  max-width: 420px;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.hero-btn {
+  display: inline-block;
+  background: var(--peach);
+  color: var(--ink);
+  font-size: 13px;
+  padding: 13px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s;
+}
+.hero-btn:hover { opacity: 0.85; }
+.hero-photo {
+  width: 220px;
+  height: 270px;
+  background: #B8B0C8;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.hero-photo-placeholder { font-size: 13px; color: #8A82A0; }
+
+/* VALUES BAR */
+.values-bar {
+  background: var(--dark);
+  padding: 32px 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.val {
+  text-align: center;
+  padding: 0 20px;
+  border-right: 0.5px solid #2E2E2E;
+}
+.val:last-child { border: none; }
+.val-title {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: #EDEAE4;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.val-sub { font-size: 11px; color: #555; line-height: 1.55; }
+
+/* SECTIONS */
+.sec {
+  padding: 72px 48px;
+  border-bottom: 0.5px solid var(--border);
+}
+.sec-alt { background: var(--bg-alt); }
+.sec-label {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.sec-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 56px;
+  align-items: start;
+}
+.about-text {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.9;
+  font-weight: 300;
+}
+.about-text p { margin-bottom: 18px; }
+.about-text p:last-of-type { margin-bottom: 0; }
+.about-text strong { color: var(--ink); font-weight: 500; }
+.fun-facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.fun-tag {
+  font-size: 12px;
+  color: #555;
+  background: var(--card);
+  padding: 6px 14px;
+  border-radius: 30px;
+}
+.about-aside { display: flex; flex-direction: column; padding-top: 4px; }
+.aside-item {
+  padding: 16px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.aside-item:first-child { padding-top: 0; }
+.aside-item:last-child { border: none; padding-bottom: 0; }
+.aside-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--light);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.aside-val { font-size: 13px; color: #666; font-weight: 300; line-height: 1.6; }
+
+/* CAPABILITIES */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.skill-card {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 22px 18px;
+  border: 0.5px solid var(--border);
+}
+.skill-card h4 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.skill-card p { font-size: 13px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+.tools-row {
+  padding-top: 24px;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.tools-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--light);
+  font-weight: 500;
+  margin-right: 4px;
+}
+.tool-tag {
+  font-size: 12px;
+  color: #666;
+  background: var(--card);
+  padding: 5px 13px;
+  border-radius: 30px;
+}
+
+/* CASE STUDIES */
+.case-note {
+  font-size: 12px;
+  color: var(--light);
+  font-style: italic;
+  margin-bottom: 28px;
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.case-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.case-card:hover { transform: translateY(-2px); }
+.c-tag {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.c-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.c-body {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+.c-footer { border-top: 0.5px solid var(--border-card); padding-top: 16px; }
+.view-btn {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--ink);
+  border: 0.5px solid #AAA;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, border-color 0.2s;
+}
+.view-btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+/* OLLIN CARD */
+.ollin-card {
+  grid-column: 1 / -1;
+  background: var(--card);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  overflow: hidden;
+}
+.ollin-body { padding: 28px; display: flex; flex-direction: column; }
+.ollin-aside {
+  background: var(--card-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px;
+}
+.ollin-name {
+  font-family: var(--serif);
+  font-size: 26px;
+  color: var(--ink);
+  font-weight: 400;
+}
+.ollin-sub { font-size: 12px; color: #888; text-align: center; line-height: 1.5; }
+.ollin-url { font-size: 11px; color: var(--light); margin-top: 10px; }
+.ollin-url a { color: var(--light); text-decoration: none; }
+.ollin-url a:hover { color: var(--ink); }
+
+/* PROCESS */
+.process-intro {
+  font-size: 15px;
+  color: #777;
+  line-height: 1.85;
+  max-width: 560px;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 0.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.p-step {
+  padding: 28px 22px;
+  border-right: 0.5px solid var(--border);
+  background: var(--bg-alt);
+}
+.p-step:last-child { border-right: none; }
+.p-step:nth-child(even) { background: var(--card); }
+.p-num {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: #C9C4BA;
+  margin-bottom: 12px;
+  font-weight: 400;
+  line-height: 1;
+}
+.p-step h3 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.p-step p { font-size: 12px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+
+/* CONTACT */
+.contact-sec {
+  background: var(--dark);
+  padding: 80px 48px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.contact-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  color: #EDEAE4;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.contact-title em { font-style: italic; color: #C9C4BA; }
+.contact-desc { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 24px; font-weight: 300; }
+.c-row { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; }
+.c-row-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #555; min-width: 60px; }
+.c-row-val { font-size: 14px; color: #AAA; font-weight: 300; }
+.c-row-val a { color: #AAA; text-decoration: none; }
+.c-row-val a:hover { color: #EDEAE4; }
+.contact-quote {
+  background: #252525;
+  border-radius: 14px;
+  padding: 32px;
+  border-left: 2px solid #444;
+}
+.contact-quote blockquote {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: #777;
+  line-height: 1.8;
+  font-style: italic;
+}
+.contact-quote cite {
+  font-size: 11px;
+  color: #444;
+  margin-top: 16px;
+  display: block;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* FADE IN */
+.fade { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade.visible { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-photo { display: none; }
+  .skills-grid, .case-grid { grid-template-columns: 1fr; }
+  .values-bar { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .ollin-card { grid-template-columns: 1fr; }
+  .ollin-aside { display: none; }
+  .sec { padding: 48px 24px; }
+  .contact-sec { padding: 56px 24px; }
+  .hero { padding: 56px 24px; }
+  .values-bar { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Aylin Fernandez</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="fade">
+    <p class="hero-eyebrow">UX Researcher · Jersey City, NJ</p>
+    <h1 class="hero-headline">Built on curiosity<br>&amp; grounded in<br>evidence.</h1>
+    <p class="hero-sub">From academic labs to the inner workings of a global bank, I've built a practice around understanding human behavior in complex, high-stakes environments.</p>
+    <a href="#work" class="hero-btn">See my work</a>
+  </div>
+  <div class="hero-photo fade" style="transition-delay:0.15s;">
+    <span class="hero-photo-placeholder">Your photo here</span>
+  </div>
+</section>
+
+<!-- VALUES -->
+<div class="values-bar">
+  <div class="val">
+    <div class="val-title">Evidence over assumption</div>
+    <div class="val-sub">Every recommendation is grounded in what people actually do and say</div>
+  </div>
+  <div class="val">
+    <div class="val-title">Impact over output</div>
+    <div class="val-sub">Research is only as good as what it changes</div>
+  </div>
+  <div class="val">
+    <div class="val-title">Rigor without the jargon</div>
+    <div class="val-sub">Findings that anyone in the room can understand and act on</div>
+  </div>
+  <div class="val">
+    <div class="val-title">Findings that move decisions</div>
+    <div class="val-sub">Getting insights to the people who need them, when it matters</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="about-grid fade">
+    <div>
+      <p class="sec-label">About</p>
+      <h2 class="sec-title">A little about me</h2>
+      <div class="about-text">
+        <p>I came to UX research through developmental psychology — I spent three years at UMass Amherst's <strong>FAM Lab</strong> conducting mixed-methods research on stress and wellbeing in Latino adolescents, which included everything from behavioral studies to biological data collection. It was rigorous, meaningful work, and it gave me a strong foundation in how to ask good questions and what to do with the answers.</p>
+        <p>Over time, I found myself drawn to applying that foundation in a different context — one where the findings feed directly into product decisions. That's what brought me to <strong>JPMorgan Chase</strong>, where I now research the humans navigating some of the most complex internal systems in financial services.</p>
+        <p>When I'm off the clock, I'm usually cooking or baking, at a dance class, or on a soccer field! If not there, then watching TV with my dog Leia and cats Buckey and Earl.</p>
+        <div class="fun-facts">
+          <span class="fun-tag">Soccer league</span>
+          <span class="fun-tag">Dance classes</span>
+          <span class="fun-tag">Cooking &amp; baking</span>
+          <span class="fun-tag">Leia, Buckey &amp; Earl</span>
+          <span class="fun-tag">Dallas raised</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-aside">
+      <div class="aside-item">
+        <p class="aside-label">Current role</p>
+        <p class="aside-val">Experience Research Associate<br>JPMorgan Chase</p>
+      </div>
+      <div class="aside-item">
+        <p class="aside-label">Education</p>
+        <p class="aside-val">M.S. Developmental Psychology<br>UMass Amherst<br><br>B.S. Psychology &amp; Spanish<br>Texas State University</p>
+      </div>
+      <div class="aside-item">
+        <p class="aside-label">Based in</p>
+        <p class="aside-val">Jersey City, NJ</p>
+      </div>
+      <div class="aside-item">
+        <p class="aside-label">Open to</p>
+        <p class="aside-val">Full-time roles</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="sec sec-alt">
+  <div class="fade">
+    <p class="sec-label">Capabilities</p>
+    <h2 class="sec-title">What I bring to a team</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Discovery</h4>
+        <p>Stakeholder interviews, contextual inquiry, diary studies, survey design, generative research</p>
+      </div>
+      <div class="skill-card">
+        <h4>Synthesis</h4>
+        <p>Journey mapping, affinity mapping, heuristic evaluation, opportunity frameworks</p>
+      </div>
+      <div class="skill-card">
+        <h4>Measurement</h4>
+        <p>CSAT program design, Likert-scale analysis, perception testing, SPSS quantitative analysis</p>
+      </div>
+      <div class="skill-card">
+        <h4>Communication</h4>
+        <p>Executive readouts, stakeholder alignment, infographic reporting, offsite facilitation</p>
+      </div>
+    </div>
+    <div class="tools-row">
+      <span class="tools-label">Tools</span>
+      <span class="tool-tag">UserTesting</span>
+      <span class="tool-tag">Qualtrics</span>
+      <span class="tool-tag">SurveyMonkey</span>
+      <span class="tool-tag">1Q</span>
+      <span class="tool-tag">Figma</span>
+      <span class="tool-tag">LucidChart</span>
+      <span class="tool-tag">SPSS</span>
+      <span class="tool-tag">Airtable</span>
+      <span class="tool-tag">Notion</span>
+      <span class="tool-tag">Google Workspace</span>
+      <span class="tool-tag">Microsoft Office Suite</span>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="sec" id="work">
+  <div class="fade">
+    <p class="sec-label">Selected work</p>
+    <h2 class="sec-title">Case studies</h2>
+    <p class="case-note">Details generalized due to financial services confidentiality.</p>
+    <div class="case-grid">
+      <div class="case-card">
+        <p class="c-tag">ResearchOps · Quantitative</p>
+        <h3 class="c-title">Building a CSAT baseline across 9 internal products</h3>
+        <p class="c-body">No standardized way to measure satisfaction existed. I built one from scratch — and spent just as much energy reframing "bad" baseline scores as an opportunity as I did designing the research itself.</p>
+        <div class="c-footer"><a href="project-csat.html" class="view-btn">View Project →</a></div>
+      </div>
+      <div class="case-card">
+        <p class="c-tag">Discovery Research</p>
+        <h3 class="c-title">11 interviews that redirected an entire platform strategy</h3>
+        <p class="c-body">Leaders were set on rebuilding a failed tool. Discovery research showed why that would fail too — and pointed toward a modular solution that actually fit how teams worked.</p>
+        <div class="c-footer"><a href="project-analytics.html" class="view-btn">View Project →</a></div>
+      </div>
+      <div class="case-card">
+        <p class="c-tag">Heuristic Evaluation</p>
+        <h3 class="c-title">Finding usability gaps in a regulatory change management tool</h3>
+        <p class="c-body">An independent expert review of an internal compliance tool — delivered as a prioritized report that went straight into the product roadmap.</p>
+        <div class="c-footer"><a href="project-heuristic.html" class="view-btn">View Project →</a></div>
+      </div>
+      <div class="case-card">
+        <p class="c-tag">Discovery · Ongoing</p>
+        <h3 class="c-title">Firm-wide regulatory change research across lines of business</h3>
+        <p class="c-body">Weekly working group, 21 senior leaders, four days of executive offsites. Mapping how regulatory change actually moves through a global firm — at the firm level.</p>
+        <div class="c-footer"><a href="project-regulatory.html" class="view-btn">View Project →</a></div>
+      </div>
+      <div class="ollin-card">
+        <div class="ollin-body">
+          <p class="c-tag">Consumer Research · Independent</p>
+          <h3 class="c-title">Packaging perception testing for Ollin, an ancient grain cake mix</h3>
+          <p class="c-body">My sister's brand was getting misread as gluten-free — the opposite of the message. I ran a 50-person perception study via 1Q, identified the specific design elements causing confusion, and delivered recommendations that led to a full packaging redesign.</p>
+          <div class="c-footer"><a href="project-ollin.html" class="view-btn">View Project →</a></div>
+        </div>
+        <div class="ollin-aside">
+          <p class="ollin-name">Ollin</p>
+          <p class="ollin-sub">Ancient grain cake mix</p>
+          <p class="ollin-url"><a href="https://ollinyall.com" target="_blank">ollinyall.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec sec-alt" id="process">
+  <div class="fade">
+    <p class="sec-label">How I work</p>
+    <h2 class="sec-title">My process</h2>
+    <p class="process-intro">Good research isn't just running a study. It's asking the right question, getting the right people talking, and making sure what you find actually lands with the people who need to act on it.</p>
+    <div class="process-steps">
+      <div class="p-step">
+        <div class="p-num">01</div>
+        <h3>Get aligned</h3>
+        <p>What are we actually trying to learn? What does a useful answer look like? I figure this out before a single session is scheduled.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">02</div>
+        <h3>Design it right</h3>
+        <p>Pick the method that fits the question. Build guides that get at what people do, not just what they say.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">03</div>
+        <h3>Go talk to people</h3>
+        <p>Run sessions that give people room to surprise me. The unexpected answers are usually the most useful ones.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">04</div>
+        <h3>Make it move</h3>
+        <p>Deliver findings in a way that gets people to act. A great insight nobody acts on is just an interesting document.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="contact-grid fade">
+    <div>
+      <p class="sec-label" style="color:#444;">Get in touch</p>
+      <h2 class="contact-title">Let's talk about<br><em>your work.</em></h2>
+      <p class="contact-desc">Open to full-time roles and conversations about hard problems in complex domains.</p>
+      <div class="c-row"><span class="c-row-label">Email</span><span class="c-row-val"><a href="mailto:aylin.15.fernandez@gmail.com">aylin.15.fernandez@gmail.com</a></span></div>
+      <div class="c-row"><span class="c-row-label">LinkedIn</span><span class="c-row-val"><a href="https://www.linkedin.com/in/aylinfernandez/" target="_blank">linkedin.com/in/aylinfernandez</a></span></div>
+    </div>
+    <div class="contact-quote">
+      <blockquote>"What people say, what people do, and what they say they do are entirely different things."</blockquote>
+      <cite>— Margaret Mead</cite>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Aylin Fernandez</span>
+  <span>UX Researcher · Jersey City, NJ</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
