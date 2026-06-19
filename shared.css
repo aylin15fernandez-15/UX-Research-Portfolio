@@ -8,8 +8,8 @@
   --card:     #DDD9D0;
   --card-alt: #C9C4B8;
   --ink:      #1C1C1C;
-  --muted:    #888;
-  --light:    #AAA;
+  --muted:    #6B6B6B;
+  --light:    #84807A;
   --border:   #D5D0C8;
   --border-card: #C8C4BB;
   --dark:     #1C1C1C;
@@ -79,7 +79,7 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-footer span { font-size: 12px; color: #444; }
+footer span { font-size: 12px; color: #8E8E8E; }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
