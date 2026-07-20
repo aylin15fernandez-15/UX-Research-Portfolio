@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Aylin Fernandez</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.about-bio {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+.about-text { font-size: 15px; color: var(--ink2); line-height: 1.9; }
+.about-text p { margin-bottom: 16px; }
+.about-text p:last-child { margin-bottom: 0; }
+.fun-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.fun-tag {
+  font-size: 12px;
+  color: var(--ink2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+.about-aside { display: flex; flex-direction: column; }
+.aside-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+.aside-item:first-child { padding-top: 0; }
+.aside-item:last-child { border: none; }
+.aside-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 5px;
+}
+.aside-val { font-size: 13px; color: var(--ink2); line-height: 1.6; }
+
+.caps-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 16px;
+}
+.caps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.cap-cell { background: var(--bg); padding: 20px 18px; }
+.cap-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.cap-cell p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+.tools-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 64px; }
+.tool-pill {
+  font-size: 12px;
+  color: var(--ink2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .about-bio { grid-template-columns: 1fr; }
+  .caps-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav-outer">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Aylin Fernandez</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+  <div class="page-header">
+    <div class="page-label">About</div>
+    <h1 class="page-title">A little about me</h1>
+  </div>
+
+  <div class="about-bio">
+    <div class="about-text">
+      <p>I came to UX research through developmental psychology, spending three years at UMass Amherst's FAM Lab conducting mixed-methods research on stress and wellbeing in Latino adolescents, which included everything from behavioral studies to biological data collection. It was rigorous, meaningful work, and it gave me a strong foundation in how to ask good questions and what to do with the answers.</p>
+      <p>Over time, I found myself drawn to applying that foundation in a different context, one where the findings feed directly into product decisions. That's what brought me to JPMorgan Chase, where I now research the humans navigating some of the most complex internal systems in financial services.</p>
+      <p>When I'm off the clock, I'm usually cooking or baking, at a dance class, or on a soccer field. If not there, then watching TV with my dog Leia and cats Buckey and Earl.</p>
+      <div class="fun-tags">
+        <span class="fun-tag">Soccer league</span>
+        <span class="fun-tag">Dance classes</span>
+        <span class="fun-tag">Cooking &amp; baking</span>
+        <span class="fun-tag">Leia, Buckey &amp; Earl</span>
+        <span class="fun-tag">Dallas raised</span>
+      </div>
+    </div>
+    <div class="about-aside">
+      <div class="aside-item">
+        <div class="aside-label">Current role</div>
+        <div class="aside-val">Experience Research Associate<br>JPMorgan Chase</div>
+      </div>
+      <div class="aside-item">
+        <div class="aside-label">Education</div>
+        <div class="aside-val">M.S. Developmental Psychology<br>UMass Amherst<br><br>B.S. Psychology &amp; Spanish<br>Texas State University</div>
+      </div>
+      <div class="aside-item">
+        <div class="aside-label">Based in</div>
+        <div class="aside-val">Jersey City, NJ</div>
+      </div>
+      <div class="aside-item">
+        <div class="aside-label">Open to</div>
+        <div class="aside-val">Full-time roles</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caps-label">Capabilities</div>
+  <div class="caps-grid">
+    <div class="cap-cell"><h4>Discovery</h4><p>Stakeholder interviews, contextual inquiry, diary studies, survey design, generative research</p></div>
+    <div class="cap-cell"><h4>Synthesis</h4><p>Journey mapping, affinity mapping, heuristic evaluation, opportunity frameworks</p></div>
+    <div class="cap-cell"><h4>Measurement</h4><p>CSAT program design, Likert-scale analysis, perception testing, SPSS quantitative analysis</p></div>
+    <div class="cap-cell"><h4>Communication</h4><p>Executive readouts, stakeholder alignment, infographic reporting, offsite facilitation</p></div>
+  </div>
+
+  <div class="tools-wrap">
+    <span class="tool-pill">UserTesting</span>
+    <span class="tool-pill">Qualtrics</span>
+    <span class="tool-pill">SurveyMonkey</span>
+    <span class="tool-pill">1Q</span>
+    <span class="tool-pill">Figma</span>
+    <span class="tool-pill">LucidChart</span>
+    <span class="tool-pill">SPSS</span>
+    <span class="tool-pill">Airtable</span>
+    <span class="tool-pill">Notion</span>
+    <span class="tool-pill">Google Workspace</span>
+    <span class="tool-pill">Microsoft Office Suite</span>
+  </div>
+</div>
+
+<div class="footer-outer">
+  <div class="footer-inner">
+    <span>© 2026 Aylin Fernandez</span>
+    <span>UX Researcher · Jersey City, NJ</span>
+  </div>
+</div>
+
+</body>
+</html>

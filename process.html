@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process — Aylin Fernandez</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.process-steps { display: flex; flex-direction: column; margin-bottom: 64px; }
+.process-step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.process-step:last-child { border-bottom: none; }
+.step-num {
+  font-family: var(--serif);
+  font-size: 34px;
+  color: #DDDDDD;
+  font-weight: 400;
+  line-height: 1;
+  padding-top: 4px;
+}
+.step-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.step-text { font-size: 15px; color: var(--ink2); line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<div class="nav-outer">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Aylin Fernandez</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="process.html" class="active">Process</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+  <div class="page-header">
+    <div class="page-label">How I work</div>
+    <h1 class="page-title">My process</h1>
+    <p class="page-intro">I believe the best research starts before the actual study. I start with asking the right question, getting the right people involved, and making sure what I find actually lands with the people who need to act on it.</p>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div>
+        <div class="step-title">Get aligned</div>
+        <p class="step-text">What are we actually trying to learn? What does a useful answer look like? I figure this out before a single session is scheduled.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div>
+        <div class="step-title">Design it right</div>
+        <p class="step-text">Pick the method that fits the question, and formulate a guide that gets at what people do, not just what they say.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div>
+        <div class="step-title">Go talk to people</div>
+        <p class="step-text">Run sessions that give people room to surprise me. The unexpected answers are usually the most useful ones!</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div>
+        <div class="step-title">Make it move</div>
+        <p class="step-text">Deliver findings in a way that gets people to act. A great insight nobody acts on is just an interesting document!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-outer">
+  <div class="footer-inner">
+    <span>© 2026 Aylin Fernandez</span>
+    <span>UX Researcher · Jersey City, NJ</span>
+  </div>
+</div>
+
+</body>
+</html>

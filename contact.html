@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Aylin Fernandez</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.contact-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  min-height: calc(100vh - 120px);
+}
+.contact-inner { max-width: 600px; width: 100%; }
+.contact-headline {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 16px;
+  margin-top: 12px;
+}
+.contact-headline em { font-style: italic; color: var(--ink2); }
+.contact-desc { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
+.contact-divider { height: 1px; background: var(--border); margin-bottom: 32px; }
+.contact-rows { display: flex; flex-direction: column; gap: 14px; margin-bottom: 48px; }
+.contact-row { display: flex; align-items: center; gap: 16px; }
+.contact-row-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+  min-width: 72px;
+}
+.contact-row-val { font-size: 15px; }
+.contact-row-val a { color: var(--accent); text-decoration: none; }
+.contact-row-val a:hover { text-decoration: underline; }
+.quote-block { border-left: 2px solid var(--border); padding-left: 20px; }
+.quote-text {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.quote-cite {
+  font-size: 12px;
+  color: var(--light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<div class="nav-outer">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Aylin Fernandez</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="contact.html" class="nav-cta active">Get in touch</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="contact-wrap">
+  <div class="contact-inner">
+    <div class="page-label">Contact</div>
+    <h1 class="contact-headline">Let's talk about<br><em>your work.</em></h1>
+    <p class="contact-desc">Open to full-time roles and conversations about hard problems in complex domains.</p>
+    <div class="contact-divider"></div>
+    <div class="contact-rows">
+      <div class="contact-row">
+        <span class="contact-row-label">Email</span>
+        <span class="contact-row-val"><a href="mailto:aylin.15.fernandez@gmail.com">aylin.15.fernandez@gmail.com</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-row-label">LinkedIn</span>
+        <span class="contact-row-val"><a href="https://www.linkedin.com/in/aylinfernandez/" target="_blank">linkedin.com/in/aylinfernandez</a></span>
+      </div>
+    </div>
+    <div class="quote-block">
+      <div class="quote-text">"What people say, what people do, and what they say they do are entirely different things."</div>
+      <div class="quote-cite">— Margaret Mead</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-outer">
+  <div class="footer-inner">
+    <span>© 2026 Aylin Fernandez</span>
+    <span>UX Researcher · Jersey City, NJ</span>
+  </div>
+</div>
+
+</body>
+</html>
